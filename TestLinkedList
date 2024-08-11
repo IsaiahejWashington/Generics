@@ -1,0 +1,49 @@
+package genericlinkedlist;
+
+
+public class TestLinkedList {
+
+    public static void main(String[] args) {
+       
+       //tests with integers
+    	GenericLinkedList<Integer>intList = new GenericLinkedList<>();
+    	intList.addGenericNode(new GenericNode<>(10));
+    	intList.addGenericNode(new GenericNode<>(20));
+    	intList.addGenericNode(new GenericNode<>(30));
+    	System.out.println("Integer List");
+    	intList.printList();
+    	
+    	//Test with strings
+    	GenericLinkedList<String>stringList = new GenericLinkedList<>();
+    	stringList.addGenericNode(new GenericNode<>("Hello"));
+    	
+    	stringList.addGenericNode(new GenericNode<>("World"));
+    	stringList.addGenericNode(new GenericNode<>("!"));
+    	System.out.println("\nStringList:");
+    	stringList.printList();
+    	
+        // Test with custom objects
+        GenericLinkedList<Point> pointList = new GenericLinkedList<>();
+        pointList.addGenericNode(new GenericNode<>(new Point(1, 2)));
+        pointList.addGenericNode(new GenericNode<>(new Point(3, 4)));
+        System.out.println("\nPoint List:");
+        pointList.printList();
+    }
+}
+ 
+class Point {
+    private int x, y;
+ 
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+ 
+    @Override
+    public String toString() {
+        return "Point(" + x + ", " + y + ")";
+    }
+
+    } //end main
+
+ //end class
